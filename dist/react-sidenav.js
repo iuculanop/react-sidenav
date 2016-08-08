@@ -20106,7 +20106,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".style_rui-snav-grp_OgHHH {\n  cursor: pointer;\n  border-left: 4px solid transparent;\n  padding: 12px 10px;\n  font-weight: bold;\n}\n.style_sidenav-item_1ECTt {\n  cursor: pointer;\n  border-left: 4px solid transparent;\n  font-weight: bold;\n  padding: 12px 10px;\n}\n.style_active_1bLoa {\n  background: #1abc9c;\n  border-left: 4px solid #117964;\n}\n\n.style_sidenav-item_1ECTt:hover {\n  background: #1abc9c !important;\n}\n\n.style_rui-snav-grp_OgHHH:hover {\n  background: #2c3e50;\n}\n.style_rui-snav-items_2hyGY {\n  overflow: hidden;\n  transition: height 0.15s ease-out;\n}\n.style_rui-snav-grp-c_3AfFK > .style_sidenav-item_1ECTt {\n  padding-left: 32px;\n}\n\n.style_rui-snav-collapsed_3O2xO {\n    border-left: 4px solid #117964;\n}\n", ""]);
+	exports.push([module.id, ".style_rui-snav-grp_OgHHH {\n  cursor: pointer;\n  border-left: 4px solid transparent;\n  padding: 12px 10px;\n  font-weight: bold;\n}\n.style_sidenav-item_1ECTt {\n  cursor: pointer;\n  border-left: 4px solid transparent;\n  font-weight: bold;\n  padding: 12px 10px;\n}\n.style_active_1bLoa {\n  background: #1abc9c;\n  border-left: 4px solid #117964;\n}\n\n.style_sidenav-item_1ECTt:hover {\n  background: #1abc9c;\n}\n\n.style_rui-snav-grp_OgHHH:hover {\n  background: #2c3e50;\n}\n.style_rui-snav-items_2hyGY {\n  overflow: hidden;\n  transition: height 0.15s ease-out;\n}\n.style_rui-snav-grp-c_3AfFK > .style_sidenav-item_1ECTt {\n  padding-left: 32px;\n}\n\n.style_rui-snav-collapsed_3O2xO {\n    border-left: 4px solid #117964;\n}\n", ""]);
 	
 	// exports
 	exports.locals = {

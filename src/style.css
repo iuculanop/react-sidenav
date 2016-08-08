@@ -16,7 +16,7 @@
 }
 
 :local(.sidenav-item:hover) {
-  background: #1abc9c !important;
+  background: #1abc9c;
 }
 
 :local(.rui-snav-grp:hover) {

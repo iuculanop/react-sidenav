@@ -1,5 +1,3 @@
-
-
 import React, { Children, cloneElement, PropTypes } from 'react';
 import NavGroup from './NavGroup';
 import Nav from './Nav';
@@ -14,7 +12,7 @@ const SideNav = React.createClass({
         children: PropTypes.node,
         navtype: PropTypes.string,
         navrenderer: PropTypes.node,
-        style: PropTypes.object
+        style: PropTypes.object,
     },
 
     buildFromSettings() {
@@ -25,8 +23,15 @@ const SideNav = React.createClass({
                 return <NavGroup type={this.props.navtype}
                     key={navkind.id}  selected={this.props.selected} onClick={this.onSubNavClick} nav={navkind}/>;
             } else {
-                return (<Nav type={this.props.navtype}
-                    key={navkind.id} selected={this.props.selected} {...navkind} onClick={this.onClick}/>);
+                return (<Nav
+                      type={this.props.navtype}
+                      key={navkind.id}
+                      selected={this.props.selected}
+                      {...navkind}
+                        onClick={this.onClick}
+                        navClassName="itemList"
+                        activeNavClassName="itemList-active"
+                      />);
             }
         });
 

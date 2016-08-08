@@ -1,7 +1,3 @@
-
-
-
-
 import React, { PropTypes } from 'react';
 
 import cx from 'classnames';
@@ -26,7 +22,9 @@ const Nav = React.createClass({
         text: PropTypes.string.isRequired,
         selected: PropTypes.string,
         type: PropTypes.string,
-        navrenderer: PropTypes.node
+        navrenderer: PropTypes.node,
+        navClassName: PropTypes.string,
+        activeNavClassName: PropTypes.string,
     },
 
     itemClicked() {
@@ -37,14 +35,15 @@ const Nav = React.createClass({
     },
 
     render() {
-        const { type } = this.props;
+        const { type, navClassName, activeNavClassName } = this.props;
 
         const Item = ( ITEM_MAP[type] ? ITEM_MAP[type] :
             this.props.navrenderer ) || IconLeft;
 
         const classes = cx(
-            styles['sidenav-item'],
-            { [styles['active']] : isActive(this.props) }
+          styles['sidenav-item'],
+          navClassName,
+          { [activeNavClassName || styles['active']] : isActive(this.props) }
         );
         return <div onClick={this.itemClicked} className={classes}>
             <Item {...this.props}/>

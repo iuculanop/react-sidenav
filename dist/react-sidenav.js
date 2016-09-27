@@ -112,7 +112,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _Nav2 = _interopRequireDefault(_Nav);
 	
-	var _objectAssign = __webpack_require__(167);
+	var _objectAssign = __webpack_require__(168);
 	
 	var _objectAssign2 = _interopRequireDefault(_objectAssign);
 	
@@ -129,7 +129,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        children: _react.PropTypes.node,
 	        navtype: _react.PropTypes.string,
 	        navrenderer: _react.PropTypes.node,
-	        style: _react.PropTypes.object
+	        style: _react.PropTypes.object,
+	        tocount: _react.PropTypes.object
 	    },
 	
 	    buildFromSettings: function buildFromSettings() {
@@ -19991,7 +19992,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        type: _react.PropTypes.string,
 	        navrenderer: _react.PropTypes.node,
 	        navClassName: _react.PropTypes.string,
-	        activeNavClassName: _react.PropTypes.string
+	        activeNavClassName: _react.PropTypes.string,
+	        tocount: _react.PropTypes.object
 	    },
 	
 	    itemClicked: function itemClicked() {
@@ -20441,6 +20443,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _Counters = __webpack_require__(167);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var IconLeft = exports.IconLeft = function IconLeft(props) {
@@ -20466,8 +20470,30 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var icon = props.icon;
 	    var text = props.text;
 	    var id = props.id;
+	    var tocount = props.tocount;
 	
 	
+	    if (typeof tocount !== 'undefined') {
+	        console.log('cosa mi ha passato:', tocount);
+	        var tooltip = tocount.tooltip;
+	        var length = tocount.arr.length;
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	                'span',
+	                null,
+	                text
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { style: { float: 'right', display: 'inline-block', paddingRight: 2 } },
+	                _react2.default.createElement('span', { key: id + '-icn', style: { paddingRight: 10 },
+	                    className: icon }),
+	                _react2.default.createElement(_Counters.Counter, { tooltip: tooltip, tocount: length })
+	            )
+	        );
+	    }
 	    return _react2.default.createElement(
 	        'div',
 	        null,
@@ -20488,7 +20514,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	var propTypes = {
 	    text: _react.PropTypes.string,
 	    id: _react.PropTypes.string,
-	    icon: _react.PropTypes.string
+	    icon: _react.PropTypes.string,
+	    tocount: _react.PropTypes.object
 	};
 	
 	IconLeft.propTypes = propTypes;
@@ -20496,6 +20523,40 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 167 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.Counter = undefined;
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Counter = exports.Counter = function Counter(props) {
+	    var tooltip = props.tooltip;
+	    var tocount = props.tocount;
+	
+	
+	    return _react2.default.createElement(
+	        "span",
+	        { title: tooltip, className: "counter" },
+	        tocount
+	    );
+	};
+	
+	Counter.propTypes = {
+	    tooltip: _react.PropTypes.string,
+	    tocount: _react.PropTypes.number
+	};
+
+/***/ },
+/* 168 */
 /***/ function(module, exports) {
 
 	'use strict';

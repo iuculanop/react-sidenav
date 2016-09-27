@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-
+import { Counter } from './Counters';
 
 export const IconLeft = (props) => {
     const { icon, text, id } = props;
@@ -12,21 +12,35 @@ export const IconLeft = (props) => {
 };
 
 export const IconRight = (props) => {
-    const { icon, text, id } = props;
+    const { icon, text, id, tocount } = props;
 
-    return <div>
-        <span>{text}</span>
-        <div style={{ float: 'right', display: 'inline-block', paddingRight: 2} }>
+    if (typeof tocount !== 'undefined') {
+        console.log('cosa mi ha passato:', tocount);
+        const tooltip = tocount.tooltip;
+        const length = tocount.arr.length;
+        return <div>
+          <span>{text}</span>
+          <div style={{ float: 'right', display: 'inline-block', paddingRight: 2} }>
             <span key={id + '-icn'} style={{ paddingRight: 10 }}
-                className={icon}></span>
-        </div>
+               className={icon}></span>
+        <Counter tooltip={tooltip} tocount={length} />
+          </div>
+        </div>;
+    }
+    return <div>
+      <span>{text}</span>
+      <div style={{ float: 'right', display: 'inline-block', paddingRight: 2} }>
+        <span key={id + '-icn'} style={{ paddingRight: 10 }}
+            className={icon}></span>
+      </div>
     </div>;
 };
 
 const propTypes = {
     text: PropTypes.string,
     id: PropTypes.string,
-    icon: PropTypes.string
+    icon: PropTypes.string,
+    tocount: PropTypes.object,
 };
 
 IconLeft.propTypes = propTypes;

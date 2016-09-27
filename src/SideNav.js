@@ -13,6 +13,7 @@ const SideNav = React.createClass({
         navtype: PropTypes.string,
         navrenderer: PropTypes.node,
         style: PropTypes.object,
+        tocount: PropTypes.object,
     },
 
     buildFromSettings() {

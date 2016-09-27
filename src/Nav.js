@@ -25,6 +25,7 @@ const Nav = React.createClass({
         navrenderer: PropTypes.node,
         navClassName: PropTypes.string,
         activeNavClassName: PropTypes.string,
+        tocount: PropTypes.object,
     },
 
     itemClicked() {

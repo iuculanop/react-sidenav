@@ -14,7 +14,7 @@ export const IconLeft = (props) => {
 export const IconRight = (props) => {
     const { icon, text, id, tocount } = props;
 
-    if (typeof tocount !== 'undefined') {
+    if (typeof tocount !== 'undefined' && tocount.arr.length > 0) {
         console.log('cosa mi ha passato:', tocount);
         const tooltip = tocount.tooltip;
         const length = tocount.arr.length;

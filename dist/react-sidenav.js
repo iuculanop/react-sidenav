@@ -20473,7 +20473,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var tocount = props.tocount;
 	
 	
-	    if (typeof tocount !== 'undefined') {
+	    if (typeof tocount !== 'undefined' && tocount.arr.length > 0) {
 	        console.log('cosa mi ha passato:', tocount);
 	        var tooltip = tocount.tooltip;
 	        var length = tocount.arr.length;
